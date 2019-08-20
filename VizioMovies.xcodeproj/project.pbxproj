@@ -3,17 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4BB617EF2305E4E0008CA661 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB617EE2305E4E0008CA661 /* MovieCell.swift */; };
+		4BB617F12305EB3D008CA661 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB617F02305EB3D008CA661 /* UIViewControllerExtension.swift */; };
+		4BB617F32305EDB8008CA661 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB617F22305EDB8008CA661 /* UIViewExtensions.swift */; };
 		4BBE3FBF2305D7FF001CF2EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE3FBE2305D7FF001CF2EE /* AppDelegate.swift */; };
-		4BBE3FC12305D7FF001CF2EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE3FC02305D7FF001CF2EE /* ViewController.swift */; };
+		4BBE3FC12305D7FF001CF2EE /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE3FC02305D7FF001CF2EE /* HomeController.swift */; };
 		4BBE3FC42305D7FF001CF2EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BBE3FC22305D7FF001CF2EE /* Main.storyboard */; };
 		4BBE3FC62305D801001CF2EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BBE3FC52305D801001CF2EE /* Assets.xcassets */; };
 		4BBE3FC92305D801001CF2EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BBE3FC72305D801001CF2EE /* LaunchScreen.storyboard */; };
 		4BBE3FD42305D801001CF2EE /* VizioMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE3FD32305D801001CF2EE /* VizioMoviesTests.swift */; };
 		4BBE3FDF2305D802001CF2EE /* VizioMoviesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE3FDE2305D802001CF2EE /* VizioMoviesUITests.swift */; };
+		4BC33AD0230C5DCA00B3E9F0 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC33ACF230C5DCA00B3E9F0 /* Movie.swift */; };
+		4BC33AD3230C749B00B3E9F0 /* CachedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC33AD2230C749B00B3E9F0 /* CachedImageView.swift */; };
 		8BBBDA60FD7113F7C5CCBC98 /* Pods_VizioMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 991FF9C80C3D10E90B672460 /* Pods_VizioMovies.framework */; };
 		A5C5FBBAAB63898ACE2D9C29 /* Pods_VizioMoviesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0541E7DAA1492B10B44BA7B6 /* Pods_VizioMoviesUITests.framework */; };
 		E64C75BC4F22BFA0E7CE527E /* Pods_VizioMoviesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7963C54036CCCD4B877E9A5C /* Pods_VizioMoviesTests.framework */; };
@@ -40,9 +45,12 @@
 		0541E7DAA1492B10B44BA7B6 /* Pods_VizioMoviesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VizioMoviesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0D049C7122EB0E19249EDBE5 /* Pods-VizioMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VizioMovies.release.xcconfig"; path = "Target Support Files/Pods-VizioMovies/Pods-VizioMovies.release.xcconfig"; sourceTree = "<group>"; };
 		147EFFF91C92FEAC31B59139 /* Pods-VizioMoviesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VizioMoviesUITests.debug.xcconfig"; path = "Target Support Files/Pods-VizioMoviesUITests/Pods-VizioMoviesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4BB617EE2305E4E0008CA661 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		4BB617F02305EB3D008CA661 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		4BB617F22305EDB8008CA661 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		4BBE3FBB2305D7FF001CF2EE /* VizioMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VizioMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BBE3FBE2305D7FF001CF2EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4BBE3FC02305D7FF001CF2EE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4BBE3FC02305D7FF001CF2EE /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		4BBE3FC32305D7FF001CF2EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4BBE3FC52305D801001CF2EE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4BBE3FC82305D801001CF2EE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -53,6 +61,8 @@
 		4BBE3FDA2305D802001CF2EE /* VizioMoviesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VizioMoviesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BBE3FDE2305D802001CF2EE /* VizioMoviesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VizioMoviesUITests.swift; sourceTree = "<group>"; };
 		4BBE3FE02305D802001CF2EE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4BC33ACF230C5DCA00B3E9F0 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		4BC33AD2230C749B00B3E9F0 /* CachedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImageView.swift; sourceTree = "<group>"; };
 		7963C54036CCCD4B877E9A5C /* Pods_VizioMoviesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VizioMoviesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		991FF9C80C3D10E90B672460 /* Pods_VizioMovies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VizioMovies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AABCEB41F6B32BC3674A8E09 /* Pods-VizioMoviesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VizioMoviesUITests.release.xcconfig"; path = "Target Support Files/Pods-VizioMoviesUITests/Pods-VizioMoviesUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -99,7 +109,6 @@
 				147EFFF91C92FEAC31B59139 /* Pods-VizioMoviesUITests.debug.xcconfig */,
 				AABCEB41F6B32BC3674A8E09 /* Pods-VizioMoviesUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -128,8 +137,9 @@
 		4BBE3FBD2305D7FF001CF2EE /* VizioMovies */ = {
 			isa = PBXGroup;
 			children = (
+				4BC33ACE230C5DB100B3E9F0 /* model */,
+				4BC33ACD230C5C7C00B3E9F0 /* view */,
 				4BBE3FBE2305D7FF001CF2EE /* AppDelegate.swift */,
-				4BBE3FC02305D7FF001CF2EE /* ViewController.swift */,
 				4BBE3FC22305D7FF001CF2EE /* Main.storyboard */,
 				4BBE3FC52305D801001CF2EE /* Assets.xcassets */,
 				4BBE3FC72305D801001CF2EE /* LaunchScreen.storyboard */,
@@ -154,6 +164,34 @@
 				4BBE3FE02305D802001CF2EE /* Info.plist */,
 			);
 			path = VizioMoviesUITests;
+			sourceTree = "<group>";
+		};
+		4BC33ACD230C5C7C00B3E9F0 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				4BBE3FC02305D7FF001CF2EE /* HomeController.swift */,
+				4BB617EE2305E4E0008CA661 /* MovieCell.swift */,
+				4BC33AD2230C749B00B3E9F0 /* CachedImageView.swift */,
+				4BC33AD1230C746B00B3E9F0 /* extensions */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		4BC33ACE230C5DB100B3E9F0 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4BC33ACF230C5DCA00B3E9F0 /* Movie.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4BC33AD1230C746B00B3E9F0 /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4BB617F02305EB3D008CA661 /* UIViewControllerExtension.swift */,
+				4BB617F22305EDB8008CA661 /* UIViewExtensions.swift */,
+			);
+			path = extensions;
 			sourceTree = "<group>";
 		};
 		B20EF9B15EA8B705739BF64D /* Frameworks */ = {
@@ -387,8 +425,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4BBE3FC12305D7FF001CF2EE /* ViewController.swift in Sources */,
+				4BB617F12305EB3D008CA661 /* UIViewControllerExtension.swift in Sources */,
+				4BB617F32305EDB8008CA661 /* UIViewExtensions.swift in Sources */,
+				4BC33AD0230C5DCA00B3E9F0 /* Movie.swift in Sources */,
+				4BBE3FC12305D7FF001CF2EE /* HomeController.swift in Sources */,
+				4BC33AD3230C749B00B3E9F0 /* CachedImageView.swift in Sources */,
 				4BBE3FBF2305D7FF001CF2EE /* AppDelegate.swift in Sources */,
+				4BB617EF2305E4E0008CA661 /* MovieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
