@@ -9,9 +9,10 @@
 import UIKit
 import Alamofire
 
-class HomeController: UICollectionViewController {
+class HomeController: UICollectionViewController, UISearchBarDelegate {
     
     var movies = [Movie]()
+    let searchController = UISearchController(searchResultsController: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,18 @@ class HomeController: UICollectionViewController {
         collectionView?.backgroundColor = UIColor.white
         collectionView?.register(MovieCell.self, forCellWithReuseIdentifier: "cellId")
         
-        fetchMovies()
+        //setup search
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search for a Movie"
+        searchController.searchBar.setValue("Search", forKey: "cancelButtonText")
+        searchController.searchBar.text = "Star Wars"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        searchController.isActive = true
+        navigationItem.hidesSearchBarWhenScrolling = false
+        
+        fetchMovies(searchPhrase: "Star Wars")
     }
     
     override func collectionView(_: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -43,12 +55,17 @@ class HomeController: UICollectionViewController {
         return 0
     }
     
-    func fetchMovies() {
+    //this cancel button is overrided to be Search
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        fetchMovies(searchPhrase: searchController.searchBar.text!)
+    }
+    
+    func fetchMovies(searchPhrase: String) {
         movies = [Movie]()
-        
+        var search = searchPhrase.replacingOccurrences(of: " ", with: "+")
         let movieDbUrl = "https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&page=1&api_key=64b6f3a69e5717b13ed8a56fe4417e71"
-        
-        AF.request(movieDbUrl).responseJSON { response in
+        let searchUrl = "https://api.themoviedb.org/3/search/movie?api_key=64b6f3a69e5717b13ed8a56fe4417e71&query=\(search)"
+        AF.request(searchUrl).responseJSON { response in
             do {
                 let json = try JSONSerialization.jsonObject(with: response.data!, options: .mutableContainers)
                 if let dictionary = json as? [String: Any] {

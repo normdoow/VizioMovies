@@ -26,26 +26,29 @@ class CachedImageView: UIImageView {
             self.image = imageFromCache
             return
         }
-        
-        URLSession.shared.dataTask(with: url! as URL, completionHandler: { (data, respones, error) in
-            
-            if error != nil {
-                print(error)
-                return
-            }
-            
-            DispatchQueue.main.sync { [weak self] in
+        if let u = url {
+            URLSession.shared.dataTask(with: u as URL, completionHandler: { (data, respones, error) in
                 
-                let imageToCache = UIImage(data: data!)
-                
-                if self!.imageUrlString == urlString {
-                    self!.image = imageToCache
+                if error != nil {
+                    print(error)
+                    return
                 }
                 
-                imageCache.setObject(imageToCache!, forKey: urlString as AnyObject)
-            }
-            
-        }).resume()
+                DispatchQueue.main.sync { [weak self] in
+                    
+                    let imageToCache = UIImage(data: data!)
+                    
+                    if self!.imageUrlString == urlString {
+                        self!.image = imageToCache
+                    }
+                    
+                    imageCache.setObject(imageToCache!, forKey: urlString as AnyObject)
+                }
+                
+            }).resume()
+        } else {
+            image = nil
+        }
     }
     
 }

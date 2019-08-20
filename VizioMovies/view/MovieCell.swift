@@ -23,7 +23,7 @@ class MovieCell: UICollectionViewCell {
 
     let thumbnailImageView: CachedImageView = {
         let imageView = CachedImageView()
-        imageView.backgroundColor = UIColor.blue
+        imageView.backgroundColor = UIColor.lightGray
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView
@@ -49,6 +49,7 @@ class MovieCell: UICollectionViewCell {
         textView.text = ""
         textView.textContainerInset = UIEdgeInsets(top: 0, left: -4, bottom: 0, right: 0)
         textView.textColor = UIColor.lightGray
+        textView.isEditable = false
         return textView
     }()
 
