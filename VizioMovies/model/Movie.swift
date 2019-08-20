@@ -10,11 +10,13 @@ import Foundation
 
 class Movie {
     
+    var id: Int
     var imageUrl: String
     var title: String
     var description: String
     
-    init(title: String, imageUrl: String, description: String) {
+    init(id: Int, title: String, imageUrl: String, description: String) {
+        self.id = id
         self.title = title
         self.imageUrl = imageUrl
         self.description = description

@@ -62,8 +62,7 @@ class HomeController: UICollectionViewController, UISearchBarDelegate {
     
     func fetchMovies(searchPhrase: String) {
         movies = [Movie]()
-        var search = searchPhrase.replacingOccurrences(of: " ", with: "+")
-        let movieDbUrl = "https://api.themoviedb.org/3/discover/movie?primary_release_date.gte=2014-09-15&primary_release_date.lte=2014-10-22&page=1&api_key=64b6f3a69e5717b13ed8a56fe4417e71"
+        let search = searchPhrase.replacingOccurrences(of: " ", with: "+")
         let searchUrl = "https://api.themoviedb.org/3/search/movie?api_key=64b6f3a69e5717b13ed8a56fe4417e71&query=\(search)"
         AF.request(searchUrl).responseJSON { response in
             do {
@@ -72,10 +71,11 @@ class HomeController: UICollectionViewController, UISearchBarDelegate {
                     if let results = dictionary["results"] as? [Any] {
                         for m in results {
                             if let movie = m as? [String: Any] {
+                                let id = movie["id"] as! Int
                                 let title = movie["title"] as! String
                                 let imageUrl = "https://image.tmdb.org/t/p/w500\(movie["poster_path"] ?? "")"
                                 let description = movie["overview"] as! String
-                                let newMovie = Movie(title: title, imageUrl: imageUrl, description: description)
+                                let newMovie = Movie(id: id, title: title, imageUrl: imageUrl, description: description)
                                 self.movies.append(newMovie)
                             }
                         }
