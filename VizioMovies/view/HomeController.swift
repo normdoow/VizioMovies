@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeController: UICollectionViewController, UISearchBarDelegate {
+class HomeController: UICollectionViewController, UISearchBarDelegate, UICollectionViewDelegateFlowLayout {
     
     var movies = [Movie]()
     let searchController = UISearchController(searchResultsController: nil)
@@ -64,12 +64,15 @@ class HomeController: UICollectionViewController, UISearchBarDelegate {
         resetMovies(searchPhrase: searchController.searchBar.text!)
     }
     
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let height = (view.frame.width - 16 - 16) * 9 / 16
+        return CGSize(width: collectionView.frame.width , height: height + 16 + 68)
+    }
+    
     func resetMovies(searchPhrase: String) {
         ApiHelper.fetchMovies(searchPhrase: searchPhrase, onComplete: { movies in
             self.movies = movies
-//            DispatchQueue.main.sync { [weak self] in
-                self.collectionView.reloadData()
-//            }
+            self.collectionView.reloadData()
         })
     }
 

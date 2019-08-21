@@ -28,9 +28,7 @@ class ReviewsView : UIView, UICollectionViewDataSource, UICollectionViewDelegate
     func resetReviews() {
         ApiHelper.fetchReviews(movieId: movieId, onComplete: { reviews in
             self.reviews = reviews
-//            DispatchQueue.main.sync { [weak self] in
-                self.collectionView.reloadData()
-//            }
+            self.collectionView.reloadData()
         })
     }
     

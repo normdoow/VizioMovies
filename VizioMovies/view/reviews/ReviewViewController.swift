@@ -8,7 +8,6 @@
 
 import UIKit
 import Foundation
-import Alamofire
 
 class ReviewViewController: UIViewController {
     var movie: Movie
@@ -75,8 +74,6 @@ class ReviewViewController: UIViewController {
         view.addConstraint(NSLayoutConstraint(item: reviewsView, attribute: .bottom, relatedBy: .equal, toItem: self.bottomLayoutGuide, attribute: .top, multiplier: 1, constant: 0))
         
     }
-    
-    
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

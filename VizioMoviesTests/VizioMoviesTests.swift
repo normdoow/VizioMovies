@@ -19,16 +19,16 @@ class VizioMoviesTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testMoviesEndpoint() {
+        ApiHelper.fetchMovies(searchPhrase: "Star Wars", onComplete: { movies in
+            XCTAssertGreaterThan(movies.count, 0)
+        })
     }
 
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    func testReviewEndpoint() {
+        ApiHelper.fetchReviews(movieId: 245891, onComplete: { reviews in
+            XCTAssertGreaterThan(reviews.count, 0)
+        })
     }
 
 }

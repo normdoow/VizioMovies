@@ -44,7 +44,7 @@ class MovieCell: UICollectionViewCell {
 
     let subtitleTextView: UITextView = {
         let textView = UITextView()
-    
+        textView.isScrollEnabled = false
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.text = ""
         textView.textContainerInset = UIEdgeInsets(top: 0, left: -4, bottom: 0, right: 0)

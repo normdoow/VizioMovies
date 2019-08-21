@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4BB617EF2305E4E0008CA661 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB617EE2305E4E0008CA661 /* MovieCell.swift */; };
-		4BB617F12305EB3D008CA661 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB617F02305EB3D008CA661 /* UIViewControllerExtension.swift */; };
 		4BB617F32305EDB8008CA661 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BB617F22305EDB8008CA661 /* UIViewExtensions.swift */; };
 		4BBE3FBF2305D7FF001CF2EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE3FBE2305D7FF001CF2EE /* AppDelegate.swift */; };
 		4BBE3FC12305D7FF001CF2EE /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE3FC02305D7FF001CF2EE /* HomeController.swift */; };
@@ -51,7 +50,6 @@
 		0D049C7122EB0E19249EDBE5 /* Pods-VizioMovies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VizioMovies.release.xcconfig"; path = "Target Support Files/Pods-VizioMovies/Pods-VizioMovies.release.xcconfig"; sourceTree = "<group>"; };
 		147EFFF91C92FEAC31B59139 /* Pods-VizioMoviesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VizioMoviesUITests.debug.xcconfig"; path = "Target Support Files/Pods-VizioMoviesUITests/Pods-VizioMoviesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4BB617EE2305E4E0008CA661 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
-		4BB617F02305EB3D008CA661 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		4BB617F22305EDB8008CA661 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		4BBE3FBB2305D7FF001CF2EE /* VizioMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VizioMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BBE3FBE2305D7FF001CF2EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -201,7 +199,6 @@
 		4BC33AD1230C746B00B3E9F0 /* extensions */ = {
 			isa = PBXGroup;
 			children = (
-				4BB617F02305EB3D008CA661 /* UIViewControllerExtension.swift */,
 				4BB617F22305EDB8008CA661 /* UIViewExtensions.swift */,
 			);
 			path = extensions;
@@ -459,7 +456,6 @@
 				4BC33ADF230D619C00B3E9F0 /* ApiHelper.swift in Sources */,
 				4BC33AD8230C91D400B3E9F0 /* ReviewsView.swift in Sources */,
 				4BC33ADA230C91F200B3E9F0 /* ReviewCell.swift in Sources */,
-				4BB617F12305EB3D008CA661 /* UIViewControllerExtension.swift in Sources */,
 				4BB617F32305EDB8008CA661 /* UIViewExtensions.swift in Sources */,
 				4BC33AD0230C5DCA00B3E9F0 /* Movie.swift in Sources */,
 				4BBE3FC12305D7FF001CF2EE /* HomeController.swift in Sources */,
