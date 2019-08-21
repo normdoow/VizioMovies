@@ -1,8 +1,8 @@
 //
-//  MovieCell.swift
+//  ViewController.swift
 //  VizioMovies
 //
-//  Created by Noah Bragg on 8/15/19.
+//  Created by Noah Bragg on 8/19/19.
 //  Copyright © 2019 Noah Bragg. All rights reserved.
 //
 import UIKit
