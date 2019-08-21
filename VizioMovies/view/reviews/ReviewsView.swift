@@ -11,6 +11,7 @@ import UIKit
 class ReviewsView : UIView, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout  {
     
     var movieId: Int
+    var reviews = [Review]()
     
     lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -24,10 +25,13 @@ class ReviewsView : UIView, UICollectionViewDataSource, UICollectionViewDelegate
         return cv
     }()
     
-    func refresh() {
-        DispatchQueue.main.async {
-            self.collectionView.reloadData()
-        }
+    func resetReviews() {
+        ApiHelper.fetchReviews(movieId: movieId, onComplete: { reviews in
+            self.reviews = reviews
+//            DispatchQueue.main.sync { [weak self] in
+                self.collectionView.reloadData()
+//            }
+        })
     }
     
     init(movieId: Int) {
@@ -41,26 +45,23 @@ class ReviewsView : UIView, UICollectionViewDataSource, UICollectionViewDelegate
         collectionView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         collectionView.topAnchor.constraint(equalTo: topAnchor).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        
+        resetReviews()
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let gif = gifDatastore.getGifForId(id: gifId) {
-            return gif.comments.count
-        }
-        return 0
+        return reviews.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ReviewCell", for: indexPath) as! ReviewCell
-        if let gif = gifDatastore.getGifForId(id: gifId) {
-            cell.comment = gif.comments[indexPath.item]
-        }
+        cell.review = reviews[indexPath.item]
         cell.backgroundColor = .white
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: self.collectionView.frame.size.width, height: 100)
+        return CGSize(width: self.collectionView.frame.size.width, height: 200)
     }
     
     required init?(coder aDecoder: NSCoder) {

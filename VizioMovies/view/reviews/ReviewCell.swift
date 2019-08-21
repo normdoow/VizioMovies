@@ -15,9 +15,9 @@ class ReviewCell: UICollectionViewCell {
         setupViews()
     }
     
-    var review: String? {
+    var review: Review? {
         didSet {
-            textView.text = review
+            textView.text = review?.content
         }
     }
     
@@ -30,6 +30,7 @@ class ReviewCell: UICollectionViewCell {
         textView.textColor = UIColor.white
         textView.backgroundColor = UIColor(displayP3Red: 70/255, green: 156/255, blue: 141/255, alpha: 1)
         textView.layer.cornerRadius = 10
+        textView.isEditable = false
         return textView
     }()
     
@@ -38,7 +39,7 @@ class ReviewCell: UICollectionViewCell {
         
         //Add constraint
         addConstraintsWithFormat(format: "H:|-16-[v0]-16-|", views: textView)
-        addConstraintsWithFormat(format: "V:|-0-[v0]-0-|", views: textView)
+        addConstraintsWithFormat(format: "V:|-8-[v0]-8-|", views: textView)
     }
     
     required init?(coder aDecoder: NSCoder) {

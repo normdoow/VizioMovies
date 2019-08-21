@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class HomeController: UICollectionViewController, UISearchBarDelegate {
     
@@ -34,7 +33,7 @@ class HomeController: UICollectionViewController, UISearchBarDelegate {
         searchController.isActive = true
         navigationItem.hidesSearchBarWhenScrolling = false
         
-        fetchMovies(searchPhrase: "Star Wars")
+        resetMovies(searchPhrase: "Star Wars")
     }
     
     override func collectionView(_: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -55,41 +54,23 @@ class HomeController: UICollectionViewController, UISearchBarDelegate {
         return 0
     }
     
-    //this cancel button is overrided to be Search
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        fetchMovies(searchPhrase: searchController.searchBar.text!)
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let reviewController = ReviewViewController(movie: movies[indexPath.item])
+        self.navigationController?.pushViewController(reviewController, animated: true)
     }
     
-    func fetchMovies(searchPhrase: String) {
-        movies = [Movie]()
-        let search = searchPhrase.replacingOccurrences(of: " ", with: "+")
-        let searchUrl = "https://api.themoviedb.org/3/search/movie?api_key=64b6f3a69e5717b13ed8a56fe4417e71&query=\(search)"
-        AF.request(searchUrl).responseJSON { response in
-            do {
-                let json = try JSONSerialization.jsonObject(with: response.data!, options: .mutableContainers)
-                if let dictionary = json as? [String: Any] {
-                    if let results = dictionary["results"] as? [Any] {
-                        for m in results {
-                            if let movie = m as? [String: Any] {
-                                let id = movie["id"] as! Int
-                                let title = movie["title"] as! String
-                                let imageUrl = "https://image.tmdb.org/t/p/w500\(movie["poster_path"] ?? "")"
-                                let description = movie["overview"] as! String
-                                let newMovie = Movie(id: id, title: title, imageUrl: imageUrl, description: description)
-                                self.movies.append(newMovie)
-                            }
-                        }
-                    }
-                }
-//                DispatchQueue.main.sync { [weak self] in
-                //todo: may need to do this on a new thread
-                    self.collectionView.reloadData()
-//                }
-                
-            } catch {
-                print(error)
-            }
-        }
+    //this cancel button is overrided to be Search
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        resetMovies(searchPhrase: searchController.searchBar.text!)
+    }
+    
+    func resetMovies(searchPhrase: String) {
+        ApiHelper.fetchMovies(searchPhrase: searchPhrase, onComplete: { movies in
+            self.movies = movies
+//            DispatchQueue.main.sync { [weak self] in
+                self.collectionView.reloadData()
+//            }
+        })
     }
 
 
